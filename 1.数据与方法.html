@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue实例</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<div id="app">
+    {{a}}
+</div>
+
+<body>
+
+</body>
+<script>
+    var data = {
+        "a": 1
+    }
+    var vm = new Vue({
+        el: "#app",
+        data: data
+    });
+
+    // 监听属性变化
+    vm.$watch("a", function (newValue, oldValue) {
+        console.log(newValue, oldValue)
+    })
+
+    // 支持动态的数据修改并实时渲染
+    data.a = "test123"
+</script>
+
+</html>
